@@ -5,7 +5,7 @@
  */
 package SessionBean;
 
-import javax.ejb.Remote;
+
 
 public interface CarSessionBeanRemote {
     
