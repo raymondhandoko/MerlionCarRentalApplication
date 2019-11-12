@@ -6,6 +6,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,8 +25,20 @@ public class OwnCustomer extends Customer implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long customerId;
+    @Column(length = 15, nullable = false)
+    private String password;
+    @Column(length = 15, nullable = false, unique = true)
+    private String username;
+     private List <RentalReservation> rentalReservation;
 
     public OwnCustomer() {
+        rentalReservation = new ArrayList<>();
+    }
+
+    public OwnCustomer(String password, String username, String name) {
+        super(name);
+        this.password = password;
+        this.username = username;
     }
     
     

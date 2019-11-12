@@ -41,16 +41,27 @@ public class Car implements Serializable {
     private List<RentalReservation> reservations;
     @ManyToOne
     private Outlet outlet;
+    
+    private boolean isDisabled;
 
     
     public Car() {
         reservations = new ArrayList<>();
+        isDisabled = false;
     }
      
     public Car(String licensePlate, String colour) {
         this.licensePlate = licensePlate;
         this.colour = colour;
     }  
+
+    public boolean isIsDisabled() {
+        return isDisabled;
+    }
+
+    public void setIsDisabled(boolean isDisabled) {
+        this.isDisabled = isDisabled;
+    }
     
     
     

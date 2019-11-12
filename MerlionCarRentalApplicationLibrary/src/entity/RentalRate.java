@@ -38,12 +38,13 @@ public class RentalRate implements Serializable {
     @Column(nullable=false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date rateValidityEndDate;
+    private boolean isDisabled;
     
     @JoinColumn(nullable=false)
     @ManyToOne(optional=false)
     private CarCategory carCategory;
 
-    public RentalRate(String rateName, BigDecimal ratePerDay, Date rateValidityStartDate, Date rateValidityEndDate) {
+    public RentalRate(String rateName, BigDecimal ratePerDay, Date rateValidityStartDate, Date rateValidityEndDatel) {
         this.rateName = rateName;
         this.ratePerDay = ratePerDay;
         this.rateValidityStartDate = rateValidityStartDate;
@@ -51,9 +52,59 @@ public class RentalRate implements Serializable {
     }
 
     public RentalRate() {
+        this.isDisabled = false;
+    }
+
+    public boolean isIsDisabled() {
+        return isDisabled;
+    }
+
+    public void setIsDisabled(boolean isDisabled) {
+        this.isDisabled = isDisabled;
+    }
+
+    public String getRateName() {
+        return rateName;
+    }
+
+    public void setRateName(String rateName) {
+        this.rateName = rateName;
+    }
+
+    public BigDecimal getRatePerDay() {
+        return ratePerDay;
+    }
+
+    public void setRatePerDay(BigDecimal ratePerDay) {
+        this.ratePerDay = ratePerDay;
+    }
+
+    public Date getRateValidityStartDate() {
+        return rateValidityStartDate;
+    }
+
+    public void setRateValidityStartDate(Date rateValidityStartDate) {
+        this.rateValidityStartDate = rateValidityStartDate;
+    }
+
+    public Date getRateValidityEndDate() {
+        return rateValidityEndDate;
+    }
+
+    public void setRateValidityEndDate(Date rateValidityEndDate) {
+        this.rateValidityEndDate = rateValidityEndDate;
+    }
+
+    public CarCategory getCarCategory() {
+        return carCategory;
+    }
+
+    public void setCarCategory(CarCategory carCategory) {
+        this.carCategory = carCategory;
     }
     
-
+    
+    
     public Long getRateId() {
         return rateId;
     }

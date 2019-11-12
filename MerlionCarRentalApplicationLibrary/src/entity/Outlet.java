@@ -81,6 +81,54 @@ public class Outlet implements Serializable {
         return hash;
     }
 
+    public String getOutletName() {
+        return outletName;
+    }
+
+    public void setOutletName(String outletName) {
+        this.outletName = outletName;
+    }
+
+    public String getOutletAddress() {
+        return outletAddress;
+    }
+
+    public void setOutletAddress(String outletAddress) {
+        this.outletAddress = outletAddress;
+    }
+
+    public Date getOpeningTime() {
+        return openingTime;
+    }
+
+    public void setOpeningTime(Date openingTime) {
+        this.openingTime = openingTime;
+    }
+
+    public Date getClosingTime() {
+        return closingTime;
+    }
+
+    public void setClosingTime(Date closingTime) {
+        this.closingTime = closingTime;
+    }
+
+    public RentalReservation getRentalReservation() {
+        return rentalReservation;
+    }
+
+    public void setRentalReservation(RentalReservation rentalReservation) {
+        this.rentalReservation = rentalReservation;
+    }
+
+    public List<TransitDispatchRecord> getTransitDispatchRecords() {
+        return transitDispatchRecords;
+    }
+
+    public void setTransitDispatchRecords(List<TransitDispatchRecord> transitDispatchRecords) {
+        this.transitDispatchRecords = transitDispatchRecords;
+    }
+
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the outletId fields are not set

@@ -42,6 +42,16 @@ public class TransitDispatchRecord implements Serializable {
     @ManyToOne (optional = false)
     @JoinColumn( nullable = false)
     private Employee employee; 
+
+    public TransitDispatchRecord() {
+    }
+
+    public TransitDispatchRecord(Date dispatchTime, Boolean isCompleted, Outlet destinatedOutlet) {
+        this();
+        this.dispatchTime = dispatchTime;
+        this.isCompleted = isCompleted;
+        this.destinatedOutlet = destinatedOutlet;
+    }
     
 
 
@@ -53,6 +63,47 @@ public class TransitDispatchRecord implements Serializable {
         this.transitDispatchRecordId = transitDispatchRecordId;
     }
 
+    public Date getDispatchTime() {
+        return dispatchTime;
+    }
+
+    public void setDispatchTime(Date dispatchTime) {
+        this.dispatchTime = dispatchTime;
+    }
+
+    public Boolean getIsCompleted() {
+        return isCompleted;
+    }
+
+    public void setIsCompleted(Boolean isCompleted) {
+        this.isCompleted = isCompleted;
+    }
+
+    public Outlet getDestinatedOutlet() {
+        return destinatedOutlet;
+    }
+
+    public void setDestinatedOutlet(Outlet destinatedOutlet) {
+        this.destinatedOutlet = destinatedOutlet;
+    }
+
+    public Outlet getCurrentOutlet() {
+        return currentOutlet;
+    }
+
+    public void setCurrentOutlet(Outlet currentOutlet) {
+        this.currentOutlet = currentOutlet;
+    }
+
+    public Employee getEmployee() {
+        return employee;
+    }
+
+    public void setEmployee(Employee employee) {
+        this.employee = employee;
+    }
+
+    
     @Override
     public int hashCode() {
         int hash = 0;

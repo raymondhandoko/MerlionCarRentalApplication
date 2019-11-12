@@ -5,8 +5,6 @@
  */
 package SessionBean;
 
-import javax.ejb.Local;
-
 public interface RentalReservationSessionBeanLocal {
     
 }

@@ -28,6 +28,10 @@ public class Partner implements Serializable {
     private Long partnerId;
     @Column(length = 50, nullable = false)
     private String name;
+    @Column(length = 15, nullable = false)
+    private String password;
+    @Column(length = 15, nullable = false, unique = true)
+    private String username;
     
    @OneToMany(mappedBy = "partner") 
    private List <Customer> customer; 
@@ -40,9 +44,11 @@ public class Partner implements Serializable {
     }
 
     
-    public Partner(String name) {
+    public Partner(String name, String username, String password) {
         this();
         this.name = name;
+        this.username = username;
+        this.password = password;
     }
     
     

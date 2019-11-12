@@ -42,6 +42,23 @@ public class RentalReservation implements Serializable {
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date paymentDate;
     private String creditCardCVVNumber;
+    private Boolean isCancelled;
+    
+    public BigDecimal getTotalAmount() {
+        return totalAmount;
+    }
+
+    public void setTotalAmount(BigDecimal totalAmount) {
+        this.totalAmount = totalAmount;
+    }
+
+    public Boolean getIsCancelled() {
+        return isCancelled;
+    }
+
+    public void setIsCancelled(Boolean isCancelled) {
+        this.isCancelled = isCancelled;
+    }
     
     @ManyToOne
     private CarCategory carCategory;

@@ -53,7 +53,7 @@ public class Employee implements Serializable {
         transitRecords = new ArrayList<>();
     }
 
-    public Employee(String firstName, String lastName, String password, String username, TransitStatus transitStatus) {
+    public Employee(String firstName, String lastName,String username, String password,TransitStatus transitStatus) {
         this();
         this.firstName = firstName;
         this.lastName = lastName;
@@ -61,6 +61,71 @@ public class Employee implements Serializable {
         this.username = username;
         this.transitStatus = transitStatus;
     }
+
+    public TransitDispatchRecord getTransitDispatchRecord() {
+        return transitDispatchRecord;
+    }
+
+    public void setTransitDispatchRecord(TransitDispatchRecord transitDispatchRecord) {
+        this.transitDispatchRecord = transitDispatchRecord;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public TransitStatus getTransitStatus() {
+        return transitStatus;
+    }
+
+    public void setTransitStatus(TransitStatus transitStatus) {
+        this.transitStatus = transitStatus;
+    }
+
+    public Outlet getOutlet() {
+        return outlet;
+    }
+
+    public void setOutlet(Outlet outlet) {
+        this.outlet = outlet;
+    }
+
+    public List<TransitDispatchRecord> getTransitRecords() {
+        return transitRecords;
+    }
+
+    public void setTransitRecords(List<TransitDispatchRecord> transitRecords) {
+        this.transitRecords = transitRecords;
+    }
+    
     
   
     public Long getEmployeeId() {

@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package SessionBean;
-
-import javax.ejb.Local;
-
 public interface EmployeeSessionBeanLocal {
     
 }

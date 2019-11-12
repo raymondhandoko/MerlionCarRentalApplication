@@ -5,8 +5,22 @@
  */
 package SessionBean;
 
-import javax.ejb.Local;
+import entity.RentalRate;
+import exception.DeleteRentalRateException;
+import exception.RentalRateNotFoundException;
+import exception.UpdateRentalRateException;
+import java.util.List;
 
 public interface RentalRateSessionBeanLocal {
+
+    public Long createRentalRate(RentalRate newRentalRate);
+
+    public List<RentalRate> retrieveAllRentalRates();
+
+    public RentalRate retrieveRentalRateByRentalId(Long rentalId) throws RentalRateNotFoundException;
+
+    public void updateRentalRate(RentalRate rentalRate) throws RentalRateNotFoundException, UpdateRentalRateException;
+
+    public void deleteRentalRate(Long rateId) throws RentalRateNotFoundException, DeleteRentalRateException;
     
 }

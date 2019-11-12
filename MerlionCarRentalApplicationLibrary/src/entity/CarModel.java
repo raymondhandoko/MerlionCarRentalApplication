@@ -40,14 +40,25 @@ public class CarModel implements Serializable {
      private List<Car> cars;
     @OneToMany(mappedBy = "carModel")
     private List<RentalReservation> reservations;
+    
+    private boolean isDisabled;
 
     public CarModel() {
         reservations  = new ArrayList<>();
         cars = new ArrayList<>();
+        isDisabled = false;
     }
 
     public CarModel(String modelName) {
         this.modelName = modelName;
+    }
+
+    public boolean isIsDisabled() {
+        return isDisabled;
+    }
+
+    public void setIsDisabled(boolean isDisabled) {
+        this.isDisabled = isDisabled;
     }
 
     
