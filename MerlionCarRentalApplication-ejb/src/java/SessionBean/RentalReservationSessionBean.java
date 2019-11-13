@@ -9,6 +9,7 @@ import entity.Customer;
 import entity.RentalReservation;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.ejb.Local;
@@ -36,9 +37,14 @@ public class RentalReservationSessionBean implements RentalReservationSessionBea
         
         em.persist(reservation);
         em.flush();
-        return reservation.getReservationId();
-               
+        return reservation.getReservationId();      
     }
+    
+//    public List<RentalReservation> retrieveAllRentalReservationsForCurrentDatePickup(){
+//        Date date = new Date();  
+//        
+////        Query query = em.createQuery("SELECT r FROM RentalReservation r WHERE r.rentalStartDate==date")
+//    }
     
     public void cancelReservation(Long reservationId){
         

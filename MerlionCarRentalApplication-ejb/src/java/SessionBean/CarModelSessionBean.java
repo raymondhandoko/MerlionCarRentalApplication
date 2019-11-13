@@ -5,10 +5,8 @@
  */
 package SessionBean;
 
-import entity.Car;
 import entity.CarModel;
 import exception.CarModelNotFoundException;
-import exception.CarNotFoundException;
 import exception.DeleteCarModelException;
 import java.util.List;
 import javax.ejb.Local;
