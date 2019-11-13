@@ -5,6 +5,7 @@
  */
 package entity;
 
+import enumeration.CarStatus;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,6 +43,8 @@ public class Car implements Serializable {
     @ManyToOne
     private Outlet outlet;
     
+    private CarStatus status;
+    
     private boolean isDisabled;
 
     
@@ -50,9 +53,11 @@ public class Car implements Serializable {
         isDisabled = false;
     }
      
-    public Car(String licensePlate, String colour) {
+    public Car(String licensePlate, CarModel carModel, CarStatus status, Outlet outlet) {
         this.licensePlate = licensePlate;
-        this.colour = colour;
+        this.carModel = carModel;
+        this.status = status;
+        this.outlet = outlet;
     }  
 
     public boolean isIsDisabled() {

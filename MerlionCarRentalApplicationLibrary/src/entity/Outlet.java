@@ -6,6 +6,8 @@
 package entity;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -38,12 +40,13 @@ public class Outlet implements Serializable {
     private String outletName;
     @Column(length = 50, nullable = false)
     private String outletAddress;
-    @Column(nullable = false)
+   
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date openingTime;
-    @Column(nullable = false)
-    @Temporal(javax.persistence.TemporalType.DATE)
+
+    @Temporal(javax.persistence.TemporalType.TIME)
     private Date closingTime;
+    
     @OneToOne(mappedBy = "pickupOutlet")
     private RentalReservation rentalReservation;
       @OneToMany(mappedBy = "outlet")
@@ -55,12 +58,13 @@ public class Outlet implements Serializable {
     public Outlet() {
         employees = new ArrayList<>();
         transitDispatchRecords = new ArrayList<>();
+        openingTime = new Date(0, 0, 0, 0, 0);
+        closingTime = new Date(0, 0, 0, 0, 0);
     }
 
-    public Outlet(String outletName, String outletAddress, Date openingTime, Date closingTime) {
+    public Outlet(String outletName, Date openingTime, Date closingTime) {
         this();
         this.outletName = outletName;
-        this.outletAddress = outletAddress;
         this.openingTime = openingTime;
         this.closingTime = closingTime;
     }

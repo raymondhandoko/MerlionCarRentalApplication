@@ -32,6 +32,8 @@ public class CarModel implements Serializable {
     private Long modelId;
      @Column(nullable=false)
     private String modelName;
+      @Column(nullable=false)
+    private String makeName;
     
      @ManyToOne(optional=false)
      @JoinColumn(nullable=false)
@@ -49,8 +51,10 @@ public class CarModel implements Serializable {
         isDisabled = false;
     }
 
-    public CarModel(String modelName) {
-        this.modelName = modelName;
+    public CarModel(String makeName, String modelName, CarCategory category) {
+        this.makeName = makeName;
+          this.modelName = modelName;
+        this.carCategory = category;  
     }
 
     public boolean isIsDisabled() {
@@ -73,6 +77,14 @@ public class CarModel implements Serializable {
     
     public Long getModelId() {
         return modelId;
+    }
+
+    public String getMakeName() {
+        return makeName;
+    }
+
+    public void setMakeName(String makeName) {
+        this.makeName = makeName;
     }
 
     public void setModelId(Long modelId) {

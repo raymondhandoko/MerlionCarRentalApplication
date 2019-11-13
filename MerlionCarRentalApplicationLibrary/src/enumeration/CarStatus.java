@@ -9,9 +9,7 @@ package enumeration;
  *
  * @author raymond
  */
-public enum EmployeeRole {
-    EMPLOYEE,
-    SALES_MANAGER,
-    OPERATIONS_MANAGER,
-    CS_EXECUTIVE
+public enum CarStatus {
+    AVAILABLE,
+    REPAIR
 }

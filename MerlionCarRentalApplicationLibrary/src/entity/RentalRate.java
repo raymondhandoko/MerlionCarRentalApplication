@@ -44,12 +44,15 @@ public class RentalRate implements Serializable {
     @ManyToOne(optional=false)
     private CarCategory carCategory;
 
-    public RentalRate(String rateName, BigDecimal ratePerDay, Date rateValidityStartDate, Date rateValidityEndDatel) {
+    public RentalRate(String rateName, CarCategory carCategory, BigDecimal ratePerDay, Date rateValidityStartDate, Date rateValidityEndDate) {
         this.rateName = rateName;
+        this.carCategory = carCategory;
         this.ratePerDay = ratePerDay;
         this.rateValidityStartDate = rateValidityStartDate;
         this.rateValidityEndDate = rateValidityEndDate;
     }
+   
+    
 
     public RentalRate() {
         this.isDisabled = false;

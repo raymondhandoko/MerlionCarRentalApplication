@@ -5,6 +5,7 @@
  */
 package entity;
 
+import enumeration.EmployeeRole;
 import enumeration.TransitStatus;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -35,9 +36,7 @@ public class Employee implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long employeeId;
     @Column(length = 20, nullable = false)
-    private String firstName;
-    @Column(length = 20, nullable = false)
-    private String lastName;
+    private String employeeName;
     @Column(length = 20, nullable = false)
     private String password;
     @Column(length = 20, nullable = false, unique = true)
@@ -48,18 +47,18 @@ public class Employee implements Serializable {
     private Outlet outlet;
     @OneToMany(mappedBy = "employee")
     private List <TransitDispatchRecord> transitRecords; 
+    
+    private EmployeeRole role;
 
     public Employee() {
         transitRecords = new ArrayList<>();
     }
 
-    public Employee(String firstName, String lastName,String username, String password,TransitStatus transitStatus) {
+    public Employee(String employeeName, Outlet outlet, EmployeeRole role) {
         this();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.password = password;
-        this.username = username;
-        this.transitStatus = transitStatus;
+        this.employeeName = employeeName;
+        this.role = role;
+        this.outlet = outlet;
     }
 
     public TransitDispatchRecord getTransitDispatchRecord() {
@@ -70,22 +69,13 @@ public class Employee implements Serializable {
         this.transitDispatchRecord = transitDispatchRecord;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getEmployeeName() {
+        return employeeName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
     }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getPassword() {
         return password;
     }
