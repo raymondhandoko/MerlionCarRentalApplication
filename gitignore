@@ -23,24 +23,8 @@
 nbproject/private/
 build/
 dist/
-MerlionCarRentalApplication-ejb/nbproject/private/
 
 
-MerlionCarRentalApplication-war/nbproject/private/
-MerlionCarRentalApplication-war/build/
-MerlionCarRentalApplication-war/dist/
-
-MerlionCarRentalManagementClient/nbproject/private/
-MerlionCarRentalManagementClientbuild/
-MerlionCarRentalManagementClient/dist/
-
-MerlionCarRentalReservationClient/nbproject/private/
-MerlionCarRentalReservationClient/build/
-MerlionCarRentalReservationClient/dist/
-
-MerlionCarRentalApplicationLibrary/nbproject/private/
-MerlionCarRentalApplicationLibrary/build/
-MerlionCarRentalApplicationLibrary/dist/
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
