@@ -24,8 +24,7 @@ nbproject/private/
 build/
 dist/
 MerlionCarRentalApplication-ejb/nbproject/private/
-MerlionCarRentalApplication-ejb/build/
-MerlionCarRentalApplication-ejb/dist/
+
 
 MerlionCarRentalApplication-war/nbproject/private/
 MerlionCarRentalApplication-war/build/
